@@ -3,14 +3,21 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import NotificationScreen from "./NotificationScreen";
+import NotFoundScreen from "./NotFoundScreen";
+import HomeScreen from "./HomeScreen";
+import SavedScreen from "./SavedScreen";
 
 export default function ReadingListScreen() {
+    const Tab = createMaterialTopTabNavigator();
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Reading list tab</Text>
-            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-            <EditScreenInfo path="/screens/ReadingListScreen.tsx" />
-        </View>
+        <Tab.Navigator>
+            <Tab.Screen name="Saved" component={SavedScreen} />
+            <Tab.Screen name="Archives" component={SavedScreen} />
+            <Tab.Screen name="Recently viewed" component={HomeScreen} />
+            <Tab.Screen name="Highlighted" component={SavedScreen} />
+        </Tab.Navigator>
     );
 }
 
