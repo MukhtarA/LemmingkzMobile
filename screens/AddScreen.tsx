@@ -1,32 +1,56 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
-
+import {Dimensions, Image, StyleSheet} from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+import {Text, View} from '../components/Themed';
+import Colors from "../constants/Colors";
 
 export default function AddScreen() {
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Add tab</Text>
-            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-            <EditScreenInfo path="/screens/AddScreen.tsx" />
+        <View>
+            <Image style={{
+                marginLeft: 100,
+                width: 200,
+                height: 200,
+                resizeMode: "contain",
+                justifyContent: "center",
+            }} source={require('../assets/img/typewriter.png')} />
+            <View style={{
+                marginTop: 20,
+                marginHorizontal: 5,
+                paddingVertical: 20,
+                paddingHorizontal: 15,
+                display: 'flex',
+                alignItems: "center",
+            }}>
+                <Text style={{
+                    fontSize: 25,
+                    fontWeight: '600',
+                }}
+                      onPress={() => {
+                          console.log('lol')
+                      }}
+                >
+                    Write a story
+                </Text>
+            </View>
         </View>
+
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
-    separator: {
-        marginVertical: 30,
-        height: 1,
-        width: '80%',
-    },
-});
+        container: {
+            display: "flex",
+        },
+        typewriterBlock: {},
+        typewriter: {
+            maxWidth: 200,
+            resizeMode: "contain",
+        },
+        createButton: {
+            backgroundColor: '#ae2828',
+            color: '#fff',
+            flexDirection: 'row',
+        }
+    })
+;
