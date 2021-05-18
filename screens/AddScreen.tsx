@@ -3,6 +3,7 @@ import {Dimensions, Image, StyleSheet} from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import {Text, View} from '../components/Themed';
 import Colors from "../constants/Colors";
+import {NewPost} from "../services/posts";
 
 export default function AddScreen() {
     return (
@@ -27,7 +28,7 @@ export default function AddScreen() {
                     fontWeight: '600',
                 }}
                       onPress={() => {
-                          console.log('lol')
+                          console.log('lol');
                       }}
                 >
                     Write a story
