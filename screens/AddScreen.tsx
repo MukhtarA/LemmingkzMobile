@@ -5,6 +5,8 @@ import {Text, View} from '../components/Themed';
 import Colors from "../constants/Colors";
 import {NewPost} from "../services/posts";
 
+function dispatch() {}
+
 export default function AddScreen() {
     return (
         <View>
@@ -29,6 +31,12 @@ export default function AddScreen() {
                 }}
                       onPress={() => {
                           console.log('lol');
+                          let n = 1;
+                          NewPost(dispatch, n).then(r => {
+                              return(
+                                  <Text>Something went wrong</Text>
+                              );
+                          })
                       }}
                 >
                     Write a story
